@@ -18,7 +18,7 @@
 ```yaml
 ---
 - name: Setup SMS Center Server
-  hosts: hostname1
+  hosts: hostname
   become: yes
 
   vars:
@@ -54,7 +54,7 @@
 
     - name: Enable Nginx configuration
       file:
-        src: /etc/nginx/sites-available/sms_center
+        src: /etc/nginx/sites-available/contoso.com
         dest: /etc/nginx/sites-enabled/
         state: link
 
@@ -120,7 +120,7 @@
 ```yaml
 ---
 - name: Install GitLab
-  hosts: gitlab_server
+  hosts: hostname
   become: yes
 
   tasks:
@@ -314,7 +314,7 @@ deploy_to_server:
 ```yaml
 ---
 - name: Setup Graylog logging system
-  hosts: hostname1
+  hosts: hostname
   become: true
 
   tasks:
@@ -406,7 +406,7 @@ mongodb_uri = mongodb://127.0.0.1/graylog
 ```yaml
 ---
 - name: Basic Security Setup for SMS Center Server
-  hosts: hostname1
+  hosts: hostname
   become: true
   tasks:
     - name: Update and upgrade system packages
@@ -481,7 +481,7 @@ mongodb_uri = mongodb://127.0.0.1/graylog
 ```yaml
 ---
 - name: Setup Nginx with SSL from Let's Encrypt
-  hosts: hostname1
+  hosts: hostname
   become: true
   tasks:
 
